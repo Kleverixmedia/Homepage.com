@@ -28,6 +28,11 @@
             align-items: center;
             background: rgba(0, 0, 0, 0.8);
             padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
 
         /* Logo */
@@ -49,6 +54,7 @@
             color: white;
         }
 
+        /* Navigation Links */
         nav ul {
             list-style: none;
             display: flex;
@@ -73,6 +79,7 @@
             justify-content: center;
             text-align: center;
             font-size: 2rem;
+            padding: 20px;
         }
 
         /* Sections */
@@ -90,13 +97,18 @@
             margin: auto;
         }
 
-        .service-card, .portfolio-item, .blog-post {
+        /* Responsive Grid for Services & Portfolio */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
             background: rgba(255, 255, 255, 0.1);
             padding: 20px;
-            margin: 10px auto;
-            width: 80%;
             border-radius: 10px;
-            text-align: left;
+            text-align: center;
         }
 
         /* Contact Form */
@@ -128,6 +140,36 @@
             padding: 20px;
             margin-top: 20px;
         }
+
+        /* Responsive Design for Mobile */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                display: none;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            form {
+                width: 90%;
+            }
+
+            .hero {
+                font-size: 1.5rem;
+                padding: 50px 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -138,7 +180,7 @@
             <img src="logo.png" alt="Kleverix Logo">
             <span>Kleverix Media</span>
         </div>
-        <ul>
+        <ul id="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
@@ -164,33 +206,37 @@
     <!-- Services -->
     <section id="services">
         <h2>Our Services</h2>
-        <div class="service-card">
-            <h3>Web Development</h3>
-            <p>Building high-quality, modern websites with responsive designs.</p>
-        </div>
-        <div class="service-card">
-            <h3>Tech Insights</h3>
-            <p>Providing deep analysis and updates on the latest technological trends.</p>
+        <div class="grid">
+            <div class="card">
+                <h3>Web Development</h3>
+                <p>Building high-quality, modern websites with responsive designs.</p>
+            </div>
+            <div class="card">
+                <h3>Tech Insights</h3>
+                <p>Providing deep analysis and updates on the latest technological trends.</p>
+            </div>
         </div>
     </section>
 
     <!-- Portfolio -->
     <section id="portfolio">
         <h2>Our Work</h2>
-        <div class="portfolio-item">
-            <img src="project1.jpg" alt="Project 1" style="width:100%; border-radius: 10px;">
-            <p>Next-Gen Web Solutions</p>
-        </div>
-        <div class="portfolio-item">
-            <img src="project2.jpg" alt="Project 2" style="width:100%; border-radius: 10px;">
-            <p>AI-Driven Media Platforms</p>
+        <div class="grid">
+            <div class="card">
+                <img src="project1.jpg" alt="Project 1" style="width:100%; border-radius: 10px;">
+                <p>Next-Gen Web Solutions</p>
+            </div>
+            <div class="card">
+                <img src="project2.jpg" alt="Project 2" style="width:100%; border-radius: 10px;">
+                <p>AI-Driven Media Platforms</p>
+            </div>
         </div>
     </section>
 
     <!-- Blog -->
     <section id="blog">
         <h2>Latest Articles</h2>
-        <div class="blog-post">
+        <div class="card">
             <h3>How AI is Transforming the World</h3>
             <p>Explore the impact of artificial intelligence on different industries.</p>
         </div>
