@@ -97,7 +97,7 @@
             margin: auto;
         }
 
-        /* Responsive Grid for Services & Portfolio */
+        /* Responsive Grid */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -208,11 +208,11 @@
         <h2>Our Services</h2>
         <div class="grid">
             <div class="card">
-                <h3>Web Development</h3>
+                <h3><a href="https://your-service-link.com">Web Development</a></h3>
                 <p>Building high-quality, modern websites with responsive designs.</p>
             </div>
             <div class="card">
-                <h3>Tech Insights</h3>
+                <h3><a href="https://your-service-link.com">Tech Insights</a></h3>
                 <p>Providing deep analysis and updates on the latest technological trends.</p>
             </div>
         </div>
@@ -223,11 +223,11 @@
         <h2>Our Work</h2>
         <div class="grid">
             <div class="card">
-                <img src="project1.jpg" alt="Project 1" style="width:100%; border-radius: 10px;">
+                <a href="https://your-portfolio-link.com"><img src="project1.jpg" alt="Project 1" style="width:100%; border-radius: 10px;"></a>
                 <p>Next-Gen Web Solutions</p>
             </div>
             <div class="card">
-                <img src="project2.jpg" alt="Project 2" style="width:100%; border-radius: 10px;">
+                <a href="https://your-portfolio-link.com"><img src="project2.jpg" alt="Project 2" style="width:100%; border-radius: 10px;"></a>
                 <p>AI-Driven Media Platforms</p>
             </div>
         </div>
@@ -237,7 +237,7 @@
     <section id="blog">
         <h2>Latest Articles</h2>
         <div class="card">
-            <h3>How AI is Transforming the World</h3>
+            <h3><a href="https://your-blog-link.com">How AI is Transforming the World</a></h3>
             <p>Explore the impact of artificial intelligence on different industries.</p>
         </div>
     </section>
@@ -245,10 +245,10 @@
     <!-- Contact -->
     <section id="contact">
         <h2>Contact Us</h2>
-        <form id="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
+        <form id="contact-form" action="https://docs.google.com/spreadsheets/d/1_WSsPW0fnvcpfjyc1p_YcQVrLSFCSoCtnX-MCrQCTHc/edit?usp=drivesdk" method="POST">
+            <input type="text" name="name.xls" placeholder="Your Name" required>
+            <input type="email" name="entry.YOUR_EMAIL_ENTRY_ID" placeholder="Your Email" required>
+            <textarea name="entry.YOUR_MESSAGE_ENTRY_ID" placeholder="Your Message" required></textarea>
             <button type="submit">Send</button>
         </form>
     </section>
@@ -259,20 +259,11 @@
     </footer>
 
     <script>
-        // Smooth Scroll for Navigation
         document.querySelectorAll('nav ul li a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
-        });
-
-        // Form Submission Alert
-        document.getElementById("contact-form").addEventListener("submit", function(e) {
-            e.preventDefault();
-            alert("Thank you for reaching out!");
         });
     </script>
 
