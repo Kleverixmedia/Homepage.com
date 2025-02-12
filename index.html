@@ -3,284 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kleverix Media - Digital Solutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Kleverix Media</title>
     <style>
-        /* General Styles */
-        body {
-            font-family: 'Poppins', sans-serif;
+        /* General Reset */
+        * {
             margin: 0;
             padding: 0;
-            color: white;
-            scroll-behavior: smooth;
-            background: #1a1a2e;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
 
-        /* Background - Blurred Earth Network */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://source.unsplash.com/1600x900/?earth,network,technology') no-repeat center center/cover;
-            filter: blur(6px);
-            z-index: -1;
+        /* Background - Blurred Earth with Galaxy Theme */
+        body {
+            background: url('earth-blur.jpg') no-repeat center center/cover;
+            backdrop-filter: blur(5px);
+            color: white;
+            text-align: center;
         }
 
         /* Navigation Bar */
-        header {
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(128, 128, 128, 0.9); /* Grey Navigation Bar */
-            padding: 15px 50px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 20px;
         }
 
-        /* Circular Logo */
-        .logo-container {
+        /* Logo */
+        .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
         }
 
-        .logo {
+        .logo img {
             width: 50px;
             height: 50px;
-            background: linear-gradient(to right, cyan, blue);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: black;
-            font-size: 1.2rem;
+            margin-right: 10px;
         }
 
-        .logo-text {
+        .logo span {
             font-size: 1.5rem;
             font-weight: bold;
-            color: cyan;
+            color: white;
         }
 
-        /* Navigation */
         nav ul {
             list-style: none;
             display: flex;
-            gap: 20px;
+        }
+
+        nav ul li {
+            margin: 0 15px;
         }
 
         nav ul li a {
             text-decoration: none;
             color: white;
-            font-size: 1rem;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: cyan;
+            font-size: 18px;
         }
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            height: 90vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding-top: 70px;
-            background: rgba(0, 0, 0, 0.4);
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-        }
-
-        .btn {
-            margin-top: 20px;
-            padding: 12px 24px;
-            background: cyan;
-            color: black;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            background: white;
-            color: black;
-        }
-
-        /* Services Section */
-        #services {
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .service-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .service-card {
-            width: 250px;
-            height: 140px;
-            background: rgba(0, 0, 0, 0.6);
-            border: 1px solid cyan;
-            display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
-            border-radius: 10px;
-            transition: transform 0.3s ease-in-out, background 0.3s;
-            color: cyan;
-            cursor: pointer;
-        }
-
-        .service-card:hover {
-            transform: scale(1.1);
-            background: cyan;
-            color: black;
-        }
-
-        /* About Section */
-        #about {
-            padding: 60px 20px;
             text-align: center;
+            font-size: 2rem;
         }
 
-        /* Contact Section */
-        #contact {
-            padding: 60px 20px;
-            text-align: center;
+        /* Sections */
+        section {
+            padding: 50px 20px;
         }
 
-        #contact form {
-            display: flex;
-            flex-direction: column;
-            width: 300px;
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
             margin: auto;
         }
 
-        #contact input, #contact textarea {
-            margin: 10px 0;
+        .service-card, .portfolio-item, .blog-post {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 10px auto;
+            width: 80%;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        /* Contact Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            margin: auto;
+        }
+
+        form input, form textarea, form button {
             padding: 10px;
+            margin: 10px 0;
             border: none;
             border-radius: 5px;
-            width: 100%;
         }
 
-        #contact button {
-            padding: 10px;
-            background: cyan;
-            border: none;
-            color: black;
-            font-size: 1rem;
+        form button {
+            background: #ff9800;
+            color: white;
             cursor: pointer;
-            transition: 0.3s;
-        }
-
-        #contact button:hover {
-            background: white;
         }
 
         /* Footer */
         footer {
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
             text-align: center;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                padding: 15px;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 10px;
-                padding-top: 10px;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .service-container {
-                flex-direction: column;
-            }
+            padding: 20px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
     <!-- Navigation Bar -->
-    <header>
-        <div class="logo-container">
-            <div class="logo">KM</div>
-            <div class="logo-text">Kleverix Media</div>
+    <nav>
+        <div class="logo">
+            <img src="logo.png" alt="Kleverix Logo">
+            <span>Kleverix Media</span>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <h1>Empowering Digital Excellence</h1>
-        <p>Your Gateway to Innovative Solutions</p>
-        <a href="#services" class="btn">Explore Services</a>
+    <section class="hero">
+        <h1>Welcome to Kleverix Media</h1>
+        <p>Innovating the Future with Technology & Creativity</p>
     </section>
 
-    <!-- Services Section -->
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="service-container">
-            <div class="service-card">Branding & Marketing</div>
-            <div class="service-card">Website Development</div>
-            <div class="service-card">Social Media Handling</div>
-            <div class="service-card">Content Strategy</div>
-            <div class="service-card">SEO & Digital Growth</div>
+    <!-- About Us -->
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="container">
+            <p>Kleverix Media is a leading digital platform focused on spreading technology insights and media innovations worldwide.</p>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Kleverix Media is a digital powerhouse delivering creative and strategic solutions.</p>
+    <!-- Services -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="service-card">
+            <h3>Web Development</h3>
+            <p>Building high-quality, modern websites with responsive designs.</p>
+        </div>
+        <div class="service-card">
+            <h3>Tech Insights</h3>
+            <p>Providing deep analysis and updates on the latest technological trends.</p>
+        </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Portfolio -->
+    <section id="portfolio">
+        <h2>Our Work</h2>
+        <div class="portfolio-item">
+            <img src="project1.jpg" alt="Project 1" style="width:100%; border-radius: 10px;">
+            <p>Next-Gen Web Solutions</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="project2.jpg" alt="Project 2" style="width:100%; border-radius: 10px;">
+            <p>AI-Driven Media Platforms</p>
+        </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog">
+        <h2>Latest Articles</h2>
+        <div class="blog-post">
+            <h3>How AI is Transforming the World</h3>
+            <p>Explore the impact of artificial intelligence on different industries.</p>
+        </div>
+    </section>
+
+    <!-- Contact -->
     <section id="contact">
         <h2>Contact Us</h2>
-        <form>
+        <form id="contact-form">
             <input type="text" placeholder="Your Name" required>
             <input type="email" placeholder="Your Email" required>
             <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
+            <button type="submit">Send</button>
         </form>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Kleverix Media. All Rights Reserved.</p>
+        <p>&copy; 2025 Kleverix Media | All Rights Reserved</p>
     </footer>
+
+    <script>
+        // Smooth Scroll for Navigation
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form Submission Alert
+        document.getElementById("contact-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            alert("Thank you for reaching out!");
+        });
+    </script>
 
 </body>
 </html>
