@@ -7,7 +7,6 @@
     <style>
         /* General Reset */
         * {
-In this code change the transparent box into little bit more visual in such a manner that reader easily read in such boxes in "our work, our services & latest articles section "
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -17,7 +16,7 @@ In this code change the transparent box into little bit more visual in such a ma
         /* Background - Blurred Earth with Galaxy Theme */
         body {
             background: url('Mobile wallpaper.jpeg') no-repeat center center/cover;
-            backdrop-filter: blue(5px);
+            backdrop-filter: blur(5px);
             color: white;
             text-align: center;
         }
@@ -98,7 +97,7 @@ In this code change the transparent box into little bit more visual in such a ma
             margin: auto;
         }
 
-        /* Responsive Grid */
+        /* Responsive Grid for Services & Portfolio */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -106,7 +105,7 @@ In this code change the transparent box into little bit more visual in such a ma
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.1);
             padding: 20px;
             border-radius: 10px;
             text-align: center;
@@ -186,7 +185,7 @@ In this code change the transparent box into little bit more visual in such a ma
             <li><a href="#services">Services</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#blog">Blog</a></li>
-            <li><a href="https://forms.gle/hrx4fKKFGcdUYAoW7">Contact</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -209,11 +208,11 @@ In this code change the transparent box into little bit more visual in such a ma
         <h2>Our Services</h2>
         <div class="grid">
             <div class="card">
-                <h3><a href="https://your-service-link.com">Web Development</a></h3>
+                <h3>Web Development</h3>
                 <p>Building high-quality, modern websites with responsive designs.</p>
             </div>
             <div class="card">
-                <h3><a href="https://your-service-link.com">Tech Insights</a></h3>
+                <h3>Tech Insights</h3>
                 <p>Providing deep analysis and updates on the latest technological trends.</p>
             </div>
         </div>
@@ -224,11 +223,11 @@ In this code change the transparent box into little bit more visual in such a ma
         <h2>Our Work</h2>
         <div class="grid">
             <div class="card">
-                <a href="https://your-portfolio-link.com"><img src="project1.jpg" alt="Project 1" style="width:100%; border-radius: 10px;"></a>
+                <img src="project1.jpg" alt="Project 1" style="width:100%; border-radius: 10px;">
                 <p>Next-Gen Web Solutions</p>
             </div>
             <div class="card">
-                <a href="https://your-portfolio-link.com"><img src="project2.jpg" alt="Project 2" style="width:100%; border-radius: 10px;"></a>
+                <img src="project2.jpg" alt="Project 2" style="width:100%; border-radius: 10px;">
                 <p>AI-Driven Media Platforms</p>
             </div>
         </div>
@@ -238,7 +237,7 @@ In this code change the transparent box into little bit more visual in such a ma
     <section id="blog">
         <h2>Latest Articles</h2>
         <div class="card">
-            <h3><a href="https://your-blog-link.com">How AI is Transforming the World</a></h3>
+            <h3>How AI is Transforming the World</h3>
             <p>Explore the impact of artificial intelligence on different industries.</p>
         </div>
     </section>
@@ -246,11 +245,10 @@ In this code change the transparent box into little bit more visual in such a ma
     <!-- Contact -->
     <section id="contact">
         <h2>Contact Us</h2>
-        <form id="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLSf3Y9FuXGvuVbZikmT3uLqMO57EcpZ1M9S2_9LDX2qe4E43Iw/formresponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
-            <input type="text" name="entry.1269991642" placeholder="Your Name" required>
-            <input type="email" name="entry.1932006998" placeholder="Your Email" required>
-            <textarea name="entry.723002333" placeholder="Your Message" required></textarea>
-            <input type="contact number" name="entry.706650009" placeholder="Your contact number" required>
+        <form id="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
             <button type="submit">Send</button>
         </form>
     </section>
@@ -259,26 +257,22 @@ In this code change the transparent box into little bit more visual in such a ma
     <footer>
         <p>&copy; 2025 Kleverix Media | All Rights Reserved</p>
     </footer>
-    
-<iframe name="hidden_iframe" style="display:none;"></iframe>
 
-<script>
-    var submitted = false;
-    document.getElementById("contact-form").addEventListener("submit", function() {
-        setTimeout(function() {
-            if (submitted) {
-                alert("Thank you! Your response has been recorded.");
-                document.getElementById("contact-form").reset();
-            }
-        }, 1000);
-    });
-</script>
     <script>
+        // Smooth Scroll for Navigation
         document.querySelectorAll('nav ul li a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
+        });
+
+        // Form Submission Alert
+        document.getElementById("contact-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            alert("Thank you for reaching out!");
         });
     </script>
 
