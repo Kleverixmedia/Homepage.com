@@ -258,7 +258,20 @@
     <footer>
         <p>&copy; 2025 Kleverix Media | All Rights Reserved</p>
     </footer>
+    
+<iframe name="hidden_iframe" style="display:none;"></iframe>
 
+<script>
+    var submitted = false;
+    document.getElementById("contact-form").addEventListener("submit", function() {
+        setTimeout(function() {
+            if (submitted) {
+                alert("Thank you! Your response has been recorded.");
+                document.getElementById("contact-form").reset();
+            }
+        }, 1000);
+    });
+</script>
     <script>
         document.querySelectorAll('nav ul li a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
